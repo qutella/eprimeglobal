@@ -50,13 +50,15 @@ Request example:
 http://game-domain.com/qutella-handler.php?command=check&account=[account]&qxt_server=[qxt_server]&qxt_group=[qxt_group]&sign=e579c5c8a73221eece608f6f70d12998&test=1
 
 Request parameters description:
-
-Parameter name	Description
-command	Request type (check/pay)
-account	Payment ID (main identification parameter)
-qxt_[param_name]	Additional payment identification parameters
-sign	md5 signature
-test	Parameter marking transaction as a test transaction
+<table>
+<tr>
+<td>Parameter name</td>	<td>Description</td>
+<td>command</td>	<td>Request type (check/pay)</td>
+<td>account</td>	<td>Payment ID (main identification parameter)</td>
+<td>qxt_[param_name]</td>	<td>Additional payment identification parameters</td>
+<td>sign</td>	<td>md5 signature</td>
+<td>test</td>	<td>Parameter marking transaction as a test transaction</td>
+</table>
 
 Web interface on the sever side of the project should generate following answer in xml:
 
