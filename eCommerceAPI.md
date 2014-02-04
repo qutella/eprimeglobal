@@ -53,12 +53,19 @@ Request parameters description:
 <table>
 <tr>
 <td>Parameter name</td>	<td>Description</td>
+</tr><tr>
 <td>command</td>	<td>Request type (check/pay)</td>
+</tr><tr>
 <td>account</td>	<td>Payment ID (main identification parameter)</td>
+</tr><tr>
 <td>qxt_[param_name]</td>	<td>Additional payment identification parameters</td>
+</tr><tr>
 <td>sign</td>	<td>md5 signature</td>
+</tr><tr>
 <td>test</td>	<td>Parameter marking transaction as a test transaction</td>
+</tr>
 </table>
+
 
 Web interface on the sever side of the project should generate following answer in xml:
 
