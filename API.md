@@ -1,5 +1,5 @@
 
-## Basic Virtual Currency API Description:
+### Basic Virtual Currency API Description:
 
 Payment process consists of two request types: **check** and **pay**.
 
@@ -25,26 +25,33 @@ On the **pay** step payment confirmation comes in. A request is sent to the web 
 </tr><tr>
 </table>
 
-## Forming an md5 signature string: 
-[command][sorted_params][secret_key]
-[command] – value of command paremeter
-[secret_key] – secret key specified in the project settings,
-[sorted_params]  -  string consisting of all the parameter values in the request except sign, command and test (if test parameter was sent) in alphabetic order of  their names.
+### Forming an md5 signature string: 
+**[command][sorted_params][secret_key]**
+**[command]** – value of command paremeter
+**[secret_key]** – secret key specified in the project settings,
+**[sorted_params]**  -  string consisting of all the parameter values in the request except sign, command and test (if test parameter was sent) in alphabetic order of  their names.
 
-## For example secret key is being set to: hd1827 and following parameters are present in the request:
-
-Parameter name	Value
-command	check
-account	user_login
-qxt_server	server
-qxt_group	vip
-sign	e579c5c8a73221eece608f6f70d12998
-
-## In this case generated md5 string will look like:
-checkuser_loginvipserverhd1827
-where check – is the value of command parameter, 
-user_login, vip, server – are values of all the parameters in alphabetic order of their names (account, qxt_group, qxt_server)
-and hd1827 is a secret key of the project
+For example secret key is being set to: **hd1827** and following parameters are present in the request:
+<table>
+<tr>
+<td>Parameter name</td>	<td>Value</td>
+</tr><tr>
+<td>command</td>	<td>check</td>
+</tr><tr>
+<td>account</td>	<td>user_login</td>
+</tr><tr>
+<td>qxt_server</td>	<td>server</td>
+</tr><tr>
+<td>qxt_group<td>	<td>vip</td>
+</tr><tr>
+<td>sign</td>	<td>e579c5c8a73221eece608f6f70d12998</td>
+</tr><tr>
+</table>
+In this case generated md5 string will look like:
+**checkuser_loginvipserverhd1827**
+where **check** – is the value of command parameter, 
+**user_login, vip, server** – are values of all the parameters in alphabetic order of their names (account, qxt_group, qxt_server)
+and **hd1827** is a secret key of the project
 
  
 ## Check Request Description: 
