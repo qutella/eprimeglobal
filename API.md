@@ -95,64 +95,94 @@ http://ecommerce-domain.com/handler.php?command=check&account=[account]&qxt_serv
 
 #### Web interface on the sever side of the project should generate following answer in xml:
 
-<?xml version="1.0" encoding="windows-1251"?
-<response
-	<result[result]</result
-	<comment[comment]</comment
-</response
-</code
+<?xml version="1.0" encoding="windows-1251"?>
+<response>
+	<result>[result]</result>
+	<comment>[comment]</comment>
+</response>
+
 
 #### Web interface answer description:
 
 <table>
 <tr>
 <td>Parameter name</td>	<td>Value</td>	<td>Required</td>
+</tr><tr>
 <td>Result</td>	<td>Specified in the table below</td>	<td>Yes</td>
+</tr><tr>
 <td>Comment</td>	<td>Comment</td>	<td>Optional</td>
+</tr><tr>
 </table>
 
 #### result_code parameter values:
 
-Value	Description
-0	Payment identification parameters are correct. Payment can be done.
-2	Payment identification parameters are incorrect
-3	Invalid md5
-7	Payment with specified identification parameters cannot be done for technical reasons
-
-
-
+<table>
+<tr>
+<td>Value</td>	<td>Description</td>
+</tr><tr>
+<td>0</td>	<td>Payment identification parameters are correct. Payment can be done.</td>
+</tr><tr>
+<td>2</td>	<td>Payment identification parameters are incorrect</td>
+</tr><tr>
+<td>3</td>	<td>Invalid md5</td>
+</tr><tr>
+<td>7</td>	<td>Payment with specified identification parameters cannot be done for technical reasons</td>
+</tr><tr>
+</table>
 
 
 #### Pay Request Description:
 
+
 #### Request format: 
 Lets assume that web interface on the projects side is located at: 
-http://game-domain.com/qutella-handler.php
+http://ecommerce-domain.com/handler.php
 and following additional identification parameters are being used : server and group
 
 #### Request example:
-http://game-domain.com/qutella-handler.php?command=pay&account=[account] &qxt_server=[qxt_server]&qxt_group=[qxt_group]&sum=[sum]&user_payed=[user_payed]&pay_system_id=[pay_system_id]&game_sum=[game_sum]&currency_id=[currency_id]&price=[price]&rate=[rate]&user_fee=[user_fee]&fee=[fee]&game_count=[game_count]&client_sum=[client_sum]&sign=d9db3650cb33e3fdae0efa696cffc9f2
+http://ecommerce-domain.com/handler.php?command=pay&account=[account]&qxt_server=[qxt_server]&qxt_group=[qxt_group]&sum=[sum]&user_payed=[user_payed]&pay_system_id=[pay_system_id]&game_sum=[game_sum]&currency_id=[currency_id]&price=[price]&rate=[rate]&user_fee=[user_fee]&fee=[fee]&game_count=[game_count]&client_sum=[client_sum]&sign=d9db3650cb33e3fdae0efa696cffc9f2
 
-
-Parameter name	Description	Value	Always present
-command	Request type (check/pay)	pay	Yes
-account	Payment ID (main identification parameter)		Yes
-qxt_[param_name]	Additional payment identification parameters		If no additional parameters are specified in project settings, no qxt_ parameters are sent
-id	Qutella transaction ID	Integer	Yes
-merchant_id	Projects transaction ID 	Integer	Is only sent in repeating request. Is not sent in initial request or value sent is blank.
-sum	Payment sum to be converted into virtual currency	Float	Yes
-user_fee	Transaction fee paid by user	Float	Yes
-client_sum	Payment sum for the payout	Float	Yes
+<table>
+<tr>
+<td>Parameter name</td>	<td>Description</td>	<td>Value</td>	<td>Always present</td>
+</tr><tr>
+<td>command</td>	<td>Request type (check/pay)</td>	<td>pay</td>	<td>Yes</td>
+</tr><tr>
+<td>account</td>	<td>Payment ID (main identification parameter)</td>	<td></td>	<td>Yes</td>
+</tr><tr>
+<td>qxt_[param_name]</td>	<td>Additional payment identification parameters</td> <td></td>		<td>If no additional parameters are specified in project settings, no qxt_ parameters are sent</td>
+</tr><tr>
+<td>id</td>	<td>Transaction ID</td>	<td>Integer</td>	<td>Yes</td>
+</tr><tr>
+<td>merchant_id</td>	<td>Merchant transaction ID</td> 	<td>Integer</td>	<td>Is only sent in repeating request. Is not sent in initial request or value sent is blank.</td>
+</tr><tr>
+<td>sum</td>	<td>Payment sum to be converted into amount of product</td>	<td>Float</td>	<td>Yes</td>
+</tr><tr>
+<td>user_fee</td>	<td>Transaction fee paid by user</td>	<td>Float</td>	<td>Yes</td>
+</tr><tr>
+<td>client_sum</td>	<td>Payment sum for the payout</td>	<td>Float</td>	<td>Yes</td>
+</tr><tr>
 fee	Transaction fee paid by project	Float	Yes
+</tr><tr>
 user_payed	Payment sum paid by user	Float	Yes
+</tr><tr>
 pay_system_id	ID of payment method used	Float	Yes
+</tr><tr>
 price	Price of the virtual currency unit on the moment of invoice creation	Float	Yes
+</tr><tr>
 currency_id	Payment currency ID	Float	Yes
+</tr><tr>
 rate	Currency exchange rate to the rate of virtual currency	Float	Yes
+</tr><tr>
 product_amount	Number of virtual currency units to be transferred to user	Float	Yes
+</tr><tr>
 date	Date and time of payment	YYYY-MM-DD HH:MM:SS	Yes
+</tr><tr>
 sign	md5 signature	md5 hash	Yes
+</tr><tr>
 test	Transaction marked as a test transaction	0/1	Only transferred in test transactions. If parameter test is present user should not get virtual currency transferred.
+</tr><tr>
+</table>
 
 
 
