@@ -1,9 +1,8 @@
 
-##
-
-Basic Virtual Currency API Description:
+## Basic Virtual Currency API Description:
 
 Payment process consists of two request types: **check** and **pay**.
+
 Request are send using GET method
 
 On the **check** step payment parameters are being checked. A request is sent to the web interface specified in the project settings in the dashboard to verify parameters, provided for the payment.
@@ -22,7 +21,7 @@ On the **pay** step payment confirmation comes in. A request is sent to the web 
 </tr><tr>
 <td>qxt_[param_name]</td>	<td>Additional identification parameters specified in the project settings. These paramemters get tranfered with qxt_ prefix. All additional parameters, added in the project settings are being sent.</td>
 </tr><tr>
-<td>sign</td>	<td>>md5 signature</td>
+<td>sign</td>	<td>md5 signature</td>
 </tr><tr>
 </table>
 
