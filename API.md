@@ -146,7 +146,7 @@ test	Transaction marked as a test transaction	0/1	Only transferred in test trans
 
 #### Web interface on the sever side of the project should generate following answer in xml:
 
-<code>
+<pre>
 <?xml version="1.0" encoding="windows-1251"?>
 <response>
 <id>[id]</id>
@@ -155,7 +155,7 @@ test	Transaction marked as a test transaction	0/1	Only transferred in test trans
 <result>[result]</result>
 <comment>[comment]</comment>
 </response>
-</code>
+</pre>
 
 
 # Web interface answer description
