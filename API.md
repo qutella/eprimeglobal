@@ -155,8 +155,9 @@ test	Transaction marked as a test transaction	0/1	Only transferred in test trans
 <result[result]</result
 <comment[comment]</comment
 </response
+>
 
-> # Web interface answer description
+# Web interface answer description
 
 Parameter name	Description	Value	Required
 id	Qutella transaction ID	Integer	Yes
