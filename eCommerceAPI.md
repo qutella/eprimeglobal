@@ -1,4 +1,4 @@
-Basic Virtual Currency API Description:
+### Basic Virtual Currency API Description:
 
 Payment process consists of two request types: check and pay.
 Request are send using GET method
