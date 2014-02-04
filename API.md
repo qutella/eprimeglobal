@@ -147,18 +147,16 @@ test	Transaction marked as a test transaction	0/1	Only transferred in test trans
 #### Web interface on the sever side of the project should generate following answer in xml:
 
 
-<?xml version="1.0" encoding="windows-1251"?>
-<response>
-<id>[id]</id>
-<merchant_id>[shop_id]</merchant_id>
-<sum>[sum]</sum>
-<result>[result]</result>
-<comment>[comment]</comment>
-</response>
+> <?xml version="1.0" encoding="windows-1251"?
+<response
+<id[id]</id
+<merchant_id[shop_id]</merchant_id
+<sum[sum]</sum
+<result[result]</result
+<comment[comment]</comment
+</response
 
-
-
-# Web interface answer description
+> # Web interface answer description
 
 Parameter name	Description	Value	Required
 id	Qutella transaction ID	Integer	Yes
