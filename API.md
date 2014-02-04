@@ -54,14 +54,14 @@ where **check** – is the value of command parameter,
 and **hd1827** is a secret key of the project
 
  
-## Check Request Description: 
+### Check Request Description: 
 
-## Request format: 
+#### Request format: 
 Lets assume that web interface on the projects side is located at: 
 http://game-domain.com/qutella-handler.php
 and following additional identification parameters are being used : server and group
 
-## Request example:
+#### Request example:
 http://game-domain.com/qutella-handler.php?command=check&account=[account]&qxt_server=[qxt_server]&qxt_group=[qxt_group]&sign=e579c5c8a73221eece608f6f70d12998&test=1
 
 ## Request parameters description:
