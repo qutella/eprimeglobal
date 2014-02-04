@@ -11,6 +11,8 @@ On the **pay** step payment confirmation comes in. A request is sent to the web 
 
 
 #### List of parameters present in every request:
+
+
 <table>
 <tr>
 <td>Parameter name</td>	<td>Description</td>
@@ -25,11 +27,13 @@ On the **pay** step payment confirmation comes in. A request is sent to the web 
 </tr><tr>
 </table>
 
+
 #### Forming an md5 signature string: 
 **[command][sorted_params][secret_key]**
 **[command]** – value of command paremeter
 **[secret_key]** – secret key specified in the project settings,
 **[sorted_params]**  -  string consisting of all the parameter values in the request **except sign, command and test** (if test parameter was sent) in alphabetic order of  their names.
+
 
 For example secret key is being set to: **hd1827** and following parameters are present in the request:
 <table>
@@ -47,6 +51,8 @@ For example secret key is being set to: **hd1827** and following parameters are 
 <td>sign</td>	<td>e579c5c8a73221eece608f6f70d12998</td>
 </tr><tr>
 </table>
+
+
 In this case generated md5 string will look like:
 **checkuser_loginvipserverhd1827**
 where **check** – is the value of command parameter, 
@@ -56,15 +62,20 @@ and **hd1827** is a secret key of the project
  
 #### Check Request Description: 
 
+
 #### Request format: 
 Lets assume that web interface on the projects side is located at: 
-http://game-domain.com/qutella-handler.php
+http://ecommerce-domain.com/handler.php
 and following additional identification parameters are being used : server and group
 
 #### Request example:
-http://game-domain.com/qutella-handler.php?command=check&account=[account]&qxt_server=[qxt_server]&qxt_group=[qxt_group]&sign=e579c5c8a73221eece608f6f70d12998&test=1
+
+
+http://ecommerce-domain.com/handler.php?command=check&account=[account]&qxt_server=[qxt_server]&qxt_group=[qxt_group]&sign=e579c5c8a73221eece608f6f70d12998&test=1
 
 #### Request parameters description:
+
+
 <table>
 <tr>
 <td>Parameter name</td>	<td>Description</td>
@@ -81,22 +92,25 @@ http://game-domain.com/qutella-handler.php?command=check&account=[account]&qxt_s
 </tr>
 </table>
 
+
 #### Web interface on the sever side of the project should generate following answer in xml:
 
-<code>
-<?xml version="1.0" encoding="windows-1251"?>
-<response>
-	<result>[result]</result>
-	<comment>[comment]</comment>
-</response>
-</code>
+<<code>
+<<?xml version="1.0" encoding="windows-1251"?>
+<<response>
+<	<result>[result]</result>
+<	<comment>[comment]</comment>
+<</response>
+<</code>
 
 #### Web interface answer description:
 
-Parameter name	Value	Required
-result	Specified in the table below	Yes
-comment	Comment	Optional
-
+<table>
+<tr>
+<td>Parameter name</td>	<td>Value</td>	<td>Required</td>
+<td>Result</td>	<td>Specified in the table below</td>	<td>Yes</td>
+<td>Comment</td>	<td>Comment</td>	<td>Optional</td>
+</table>
 
 #### result_code parameter values:
 
