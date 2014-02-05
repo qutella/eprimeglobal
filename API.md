@@ -28,6 +28,7 @@ On the **pay** step payment confirmation comes in. A request is sent to the web 
 </table>
 
 
+
 #### Forming an md5 signature string: 
 **[command][sorted_params][secret_key]**
 **[command]** – value of command paremeter
@@ -51,6 +52,7 @@ For example secret key is being set to: **hd1827** and following parameters are 
 <td>sign</td>	<td>e579c5c8a73221eece608f6f70d12998</td>
 </tr><tr>
 </table>
+
 
 
 In this case generated md5 string will look like:
@@ -91,6 +93,7 @@ http://ecommerce-domain.com/handler.php?command=check&account=[account]&qxt_serv
 <td>test</td>	<td>Parameter marking transaction as a test transaction</td>
 </tr>
 </table>
+
 
 
 #### Web interface on the sever side of the project should generate following answer in xml:
@@ -219,11 +222,14 @@ http://ecommerce-domain.com/handler.php?command=pay&account=[account]&qxt_server
 </tr><tr>
 </table>
 
-!!!	
+
+
+
+#### !!!	
 Please note that all parameters except comment are required. Even in case of Error, answer with all required parameters has to be sent. 0 value should be sent if valid results cannot be sent due to the Error. If some of the required parameters are not sent or sent with blank values the answer won’t be accepted as valid.
 
 
-result parameter values:
+#### result parameter values:
 
 
 <table>
@@ -245,6 +251,8 @@ result parameter values:
 <td>7</td>	<td>Payment with specified identification parameters cannot be done for technical reasons</td>	<td>Yes</td>
 </tr><tr>
 </table>
+
+
 
 «Timeout» error is associated with payment if no response is sent whithin 7 seconds.
 
