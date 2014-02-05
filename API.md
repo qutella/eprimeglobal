@@ -162,25 +162,25 @@ http://ecommerce-domain.com/handler.php?command=pay&account=[account]&qxt_server
 </tr><tr>
 <td>client_sum</td>	<td>Payment sum for the payout</td>	<td>Float</td>	<td>Yes</td>
 </tr><tr>
-fee	Transaction fee paid by project	Float	Yes
+<td>fee</td>	<td>Transaction fee paid by project</td>	<td>Float</td>	<td>Yes</td>
 </tr><tr>
-user_payed	Payment sum paid by user	Float	Yes
+<td>user_payed</td>	<td>Payment sum paid by user</td>	<td>Float</td>	<td>Yes</td>
 </tr><tr>
-pay_system_id	ID of payment method used	Float	Yes
+<td>pay_system_id</td>	<td>ID of payment method used</td>	<td>Float</td>	<td>Yes</td>
 </tr><tr>
-price	Price of the virtual currency unit on the moment of invoice creation	Float	Yes
+<td>price</td>	<td>Price of the virtual currency unit on the moment of invoice creation</td>	<td>Float</td>	<td>Yes</td>
 </tr><tr>
-currency_id	Payment currency ID	Float	Yes
+<td>currency_id<td>	<td>Payment currency ID</td>	<td>Float</td>	<td>Yes</td>
 </tr><tr>
-rate	Currency exchange rate to the rate of virtual currency	Float	Yes
+<td>rate</td>	<td>Currency exchange rate to the rate of virtual currency</td>	<td>Float</td>	<td>Yes</td>
 </tr><tr>
-product_amount	Number of virtual currency units to be transferred to user	Float	Yes
+<td>product_amount</td>	<td>Number of product units to be transferred to user</td>	<td>Float</td>	<td>Yes</td>
 </tr><tr>
-date	Date and time of payment	YYYY-MM-DD HH:MM:SS	Yes
+<td>date</td>	<td>Date and time of payment</td>	<td>YYYY-MM-DD HH:MM:SS</td>	<td>Yes</td>
 </tr><tr>
-sign	md5 signature	md5 hash	Yes
+<td>sign</td>	<td>md5 signature</td>	<td>md5 hash</td>	<td>Yes</td>
 </tr><tr>
-test	Transaction marked as a test transaction	0/1	Only transferred in test transactions. If parameter test is present user should not get virtual currency transferred.
+<td>test</td>	<td>Transaction marked as a test transaction</td>	<td>0/1</td>	<td>Only transferred in test transactions. If parameter test is present user should not get virtual currency transferred</td>
 </tr><tr>
 </table>
 
@@ -192,41 +192,59 @@ test	Transaction marked as a test transaction	0/1	Only transferred in test trans
 
 <?xml version="1.0" encoding="windows-1251"?>
 <response>
-<id[id]</id>
-<merchant_id[shop_id]</merchant_id>
-<sum[sum]</sum>
-<result[result]</result>
-<comment[comment]</comment>
+<id>[id]></id>
+<merchant_id>[shop_id]</merchant_id>
+<sum>[sum]></sum>
+<result>[result]></result>
+<comment>[comment]></comment>
 </response>
 
 
-# Web interface answer description
+#### Web interface answer description
 
-Parameter name	Description	Value	Required
-id	Qutella transaction ID	Integer	Yes
-merchant_id	Projects transaction ID	Integer	Yes
-sum	Number of virtual units transeffed to user	Float	Yes
-result	Result	See table of possibe result below	Yes
-comment	Comment		No
 
-!	
+<table>
+<tr>
+<td>Parameter name</td>	<td>Description</td>	<td>Value</td>	<td>Required</td>
+</tr><tr>
+<td>id<td>	<td>Transaction ID<td>	<td>Integer<td>	<td>Yes<td>
+</tr><tr>
+<td>merchant_id</td>	<td>Merchant transaction ID</td>	<td>Integer</td>	<td>Yes</td>
+</tr><tr>
+<td>sum</td>	<td>Number of product units transeffed to user</td>	<td>Float</td>	<td>Yes</td>
+</tr><tr>
+<td>result</td>	<td>Result</td>	<td>See table of possibe result below</td>	<td>Yes</td>
+</tr><tr>
+<td>comment</td>	<td>Comment</td>	<td></td>	<td>No</td>
+</tr><tr>
+</table>
+
+!!!	
 Please note that all parameters except comment are required. Even in case of Error, answer with all required parameters has to be sent. 0 value should be sent if valid results cannot be sent due to the Error. If some of the required parameters are not sent or sent with blank values the answer won’t be accepted as valid.
-
-
-
-
 
 
 result parameter values:
 
-Value	Description	Fatal
-0	Success	
-1	Temporary error, please try again later	No
-2	Payment identification parameters are incorrect	Yes
-3	Invalid MD5	Yes
-4	Invalid request (invalid sum, all or some of required parameters are not present)	Yes
-5	Other error	Yes
-7	Payment with specified identification parameters cannot be done for technical reasons	Yes
+
+<table>
+<tr>
+<td>Value</td>	<td>Description</td>	<td>Fatal</td>
+</tr><tr>
+<td>0</td>	<td>Success</td>	<td></td>
+</tr><tr>
+<td>1</td>	<td>Temporary error, please try again later</td>	<td>No</td>
+</tr><tr>
+<td>2</td>	<td>Payment identification parameters are incorrect</td> <td>Yes</td>
+</tr><tr>
+<td>3</td>	<td>Invalid MD5</td>	<td>Yes</td>
+</tr><tr>
+<td>4</td>	<td>Invalid request (invalid sum, all or some of required parameters are not present)</td>	<td>Yes</td>
+</tr><tr>
+<td>5<td>	<td>Other error<td>	<td>Yes<td>
+</tr><tr>
+<td>7</td>	<td>Payment with specified identification parameters cannot be done for technical reasons</td>	<td>Yes</td>
+</tr><tr>
+</table>
 
 «Timeout» error is associated with payment if no response is sent whithin 7 seconds.
 
