@@ -246,7 +246,7 @@ Please note that all parameters except comment are required. Even in case of Err
 </tr><tr>
 <td>4</td>	<td>Invalid request (invalid sum, all or some of required parameters are not present)</td>	<td>Yes</td>
 </tr><tr>
-<td>5<td>	<td>Other error<td>	<td>Yes<td>
+<td>5</td>	<td>Other error</td>	<td>Yes</td>
 </tr><tr>
 <td>7</td>	<td>Payment with specified identification parameters cannot be done for technical reasons</td>	<td>Yes</td>
 </tr><tr>
