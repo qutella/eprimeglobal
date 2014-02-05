@@ -229,7 +229,7 @@ http://ecommerce-domain.com/handler.php?command=pay&account=[account]&qxt_server
 Please note that all parameters except comment are required. Even in case of Error, answer with all required parameters has to be sent. 0 value should be sent if valid results cannot be sent due to the Error. If some of the required parameters are not sent or sent with blank values the answer won’t be accepted as valid.
 
 
-#### result parameter values:
+#### Result parameter values:
 
 
 <table>
