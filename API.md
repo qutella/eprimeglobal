@@ -97,6 +97,7 @@ http://ecommerce-domain.com/handler.php?command=check&account=[account]&qxt_serv
 
 
 #### Web interface on the sever side of the project should generate following answer in xml:
+<p>
 <mark>
 <?xml version="1.0" encoding="windows-1251"?>
 <response>
@@ -104,6 +105,7 @@ http://ecommerce-domain.com/handler.php?command=check&account=[account]&qxt_serv
 	<comment>[comment]</comment>
 </response>
 </mark>
+</p>
 
  
 
