@@ -98,11 +98,19 @@ http://ecommerce-domain.com/handler.php?command=check&account=[account]&qxt_serv
 
 #### Web interface on the sever side of the project should generate following answer in xml:
 
+ 
+
 <?xml version="1.0" encoding="windows-1251"?>
+
 <response>
-	<result>[result]</result>
-	<comment>[comment]</comment>
+
+    <result>[result]</result>
+
+    <comment>[comment]</comment>
+
 </response>
+
+ 
 
 
 #### Web interface answer description:
@@ -192,16 +200,25 @@ http://ecommerce-domain.com/handler.php?command=pay&account=[account]&qxt_server
 
 #### Web interface on the sever side of the project should generate following answer in xml:
 
+ 
 
 <?xml version="1.0" encoding="windows-1251"?>
+
 <response>
-<id>[id]></id>
-<merchant_id>[shop_id]</merchant_id>
-<sum>[sum]></sum>
-<result>[result]></result>
-<comment>[comment]></comment>
+
+<id>[id]</id>
+
+<merchant_id>[merchant_id]</merchant_id>
+
+<sum>[sum]</sum>
+
+<result>[result]</result>
+
+<comment>[comment]</comment>
+
 </response>
 
+ 
 
 #### Web interface answer description
 
