@@ -97,7 +97,13 @@ http://ecommerce-domain.com/handler.php?command=check&account=[account]&qxt_serv
 
 
 #### Web interface on the sever side of the project should generate following answer in xml:
-![](//Screen%20Shot%202014-02-07%20at%202.20.11%20PM.png)
+
+> <?xml version="1.0" encoding="windows-1251"?>
+> <response>
+> 	<result>[result]</result>
+> 	<comment>[comment]</comment>
+> </response>
+
 
 
 #### Web interface answer description:
@@ -186,8 +192,14 @@ http://ecommerce-domain.com/handler.php?command=pay&account=[account]&qxt_server
 
 
 #### Web interface on the sever side of the project should generate following answer in xml:
-
- ![](//Screen%20Shot%202014-02-07%20at%202.19.55%20PM.png)
+> <?xml version="1.0" encoding="windows-1251"?>
+> <response>
+> <id>[id]</id>
+> <merchant_id>[shop_id]</merchant_id>
+> <sum>[sum]</sum>
+> <result>[result]</result>
+> <comment>[comment]</comment>
+> </response>
 
 
 #### Web interface answer description
@@ -197,7 +209,7 @@ http://ecommerce-domain.com/handler.php?command=pay&account=[account]&qxt_server
 <tr>
 <td>Parameter name</td>	<td>Description</td>	<td>Value</td>	<td>Required</td>
 </tr><tr>
-<td>id<td>	<td>Transaction ID<td>	<td>Integer<td>	<td>Yes<td>
+<td>id</td>	<td>Transaction ID</td>	<td>Integer</td>	<td>Yes</td>
 </tr><tr>
 <td>merchant_id</td>	<td>Merchant transaction ID</td>	<td>Integer</td>	<td>Yes</td>
 </tr><tr>
