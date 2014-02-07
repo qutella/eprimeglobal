@@ -97,15 +97,7 @@ http://ecommerce-domain.com/handler.php?command=check&account=[account]&qxt_serv
 
 
 #### Web interface on the sever side of the project should generate following answer in xml:
-<b>
-<?xml version="1.0" encoding="windows-1251"?>
-<response>
-	<result>[result]</result>
-	<comment>[comment]</comment>
-</response>'
-</b>
-
- 
+![](//Screen%20Shot%202014-02-07%20at%202.20.11%20PM.png)
 
 
 #### Web interface answer description:
@@ -195,15 +187,7 @@ http://ecommerce-domain.com/handler.php?command=pay&account=[account]&qxt_server
 
 #### Web interface on the sever side of the project should generate following answer in xml:
 
- 
-"<?xml version="1.0" encoding="windows-1251"?>
-<response>
-<id>[id]</id>
-<merchant_id>[shop_id]</merchant_id>
-<sum>[sum]</sum>
-<result>[result]</result>
-<comment>[comment]</comment>
-</response>"
+ ![](//Screen%20Shot%202014-02-07%20at%202.19.55%20PM.png)
 
 
 #### Web interface answer description
@@ -231,6 +215,8 @@ http://ecommerce-domain.com/handler.php?command=pay&account=[account]&qxt_server
 #### !!!	
 Please note that all parameters except comment are required. Even in case of Error, answer with all required parameters has to be sent. 0 value should be sent if valid results cannot be sent due to the Error. If some of the required parameters are not sent or sent with blank values the answer won’t be accepted as valid.
 
+There could be more that one payment notification request for the same transaction. First one should be precessed and for all of the following ones the same response as for the first one should be sent.
+
 
 #### Result parameter values:
 
@@ -255,11 +241,15 @@ Please note that all parameters except comment are required. Even in case of Err
 </tr><tr>
 </table>
 
-
-
+#### Timeouts
 «Timeout» error is associated with payment if no response is sent whithin 7 seconds.
 
 If no fatal error occurred 3 repeating requests will be sent with interval of 10 minutes.
 One more request will be sent in 30 minutes, one after 60 minutes and 2 more in 180 minutes interval. If no answer comes after that, “no answer” fatal error is associated with payment. 
 
 Repeating requests are sent with the same values as the first one with merchant_id parameter present.
+
+#### Important notice
+
+Please be aware that at any moment new parameters can be transferred in API notifications. Make sure that your payment handler is ready accept more parameters than specified in this documentation. Along with adding new parameters documentation will be updated.
+
