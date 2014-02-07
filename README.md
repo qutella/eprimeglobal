@@ -1,10 +1,10 @@
-Eprimeglobal eCommerce API
-============
+#### Eprimeglobal eCommerce API
+
 
 Loooking to integrate with Eprimeglobal? All you need is documentation and example codes provided here and dashboard access.
 
-Getting Started
-============
+#### Getting Started
+
 
 Please take a look at the following steps before you start with integration
 
