@@ -5,7 +5,7 @@ Payment process consists of two request types: **check** and **pay**.
 
 Request are send using GET method
 
-On the **check** step payment parameters are being checked. A request is sent to the web interface specified in the project settings in the dashboard to verify parameters, provided for the payment.
+On the **check** step payment parameters are being checked. A request is sent to the web interface specified in the project settings in the dashboard to verify parameters provided for the payment.
 
 On the **pay** step payment confirmation comes in. A request is sent to the web interface specified in the project settings in the dashboard to confirm that payment has been received.
 
@@ -118,7 +118,7 @@ http://ecommerce-domain.com/handler.php?command=check&account=[account]&qxt_serv
 <tr>
 <td>Value</td>	<td>Description</td>
 </tr><tr>
-<td>0</td>	<td>Payment identification parameters are correct. Payment can be done.</td>
+<td>0</td>	<td>Payment identification parameters are correct. Payment can be processed.</td>
 </tr><tr>
 <td>2</td>	<td>Payment identification parameters are incorrect</td>
 </tr><tr>
@@ -152,7 +152,7 @@ http://ecommerce-domain.com/handler.php?command=pay&account=[account]&qxt_server
 </tr><tr>
 <td>id</td>	<td>Transaction ID</td>	<td>Integer</td>	<td>Yes</td>
 </tr><tr>
-<td>merchant_id</td>	<td>Merchant transaction ID</td> 	<td>Integer</td>	<td>Is only sent in repeating request. Is not sent in initial request or value sent is blank.</td>
+<td>merchant_id</td>	<td>Merchant transaction ID</td> 	<td>Integer</td>	<td>Is only sent in repeating request. Is not sent in initial request or if value sent is blank.</td>
 </tr><tr>
 <td>sum</td>	<td>Payment sum to be converted into amount of product</td>	<td>Float</td>	<td>Yes</td>
 </tr><tr>
@@ -166,11 +166,11 @@ http://ecommerce-domain.com/handler.php?command=pay&account=[account]&qxt_server
 </tr><tr>
 <td>pay_system_id</td>	<td>ID of payment method used</td>	<td>Float</td>	<td>Yes</td>
 </tr><tr>
-<td>price</td>	<td>Price of the virtual currency unit on the moment of invoice creation</td>	<td>Float</td>	<td>Yes</td>
+<td>price</td>	<td>Price of the product unit on the moment of invoice creation</td>	<td>Float</td>	<td>Yes</td>
 </tr><tr>
 <td>currency_id<td>	<td>Payment currency ID</td>	<td>Float</td>	<td>Yes</td>
 </tr><tr>
-<td>rate</td>	<td>Currency exchange rate to the rate of virtual currency</td>	<td>Float</td>	<td>Yes</td>
+<td>rate</td>	<td>Exchange rate to the price of the product</td>	<td>Float</td>	<td>Yes</td>
 </tr><tr>
 <td>product_amount</td>	<td>Number of product units to be transferred to user</td>	<td>Float</td>	<td>Yes</td>
 </tr><tr>
@@ -178,7 +178,7 @@ http://ecommerce-domain.com/handler.php?command=pay&account=[account]&qxt_server
 </tr><tr>
 <td>sign</td>	<td>md5 signature</td>	<td>md5 hash</td>	<td>Yes</td>
 </tr><tr>
-<td>test</td>	<td>Transaction marked as a test transaction</td>	<td>0/1</td>	<td>Only transferred in test transactions. If parameter test is present user should not get virtual currency transferred</td>
+<td>test</td>	<td>Transaction marked as a test transaction</td>	<td>0/1</td>	<td>Only transferred in test transactions. If parameter test is present user should not be getting product</td>
 </tr><tr>
 </table>
 
