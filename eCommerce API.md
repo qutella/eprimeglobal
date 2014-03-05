@@ -56,8 +56,9 @@ For example secret key is being set to: **hd1827** and following parameters are 
 
 In this case generated md5 string will look like:
 **checkuser_loginvipserverhd1827**
+
 where **check** – is the value of command parameter, 
-**user_login, vip, server** – are values of all the parameters in alphabetic order of their names (account, qxt_group, qxt_server)
+**user_login**, **vip**, **server** – are values of all the parameters in alphabetic order of their names (account, qxt_group, qxt_server)
 and **hd1827** is a secret key of the project
 
  
